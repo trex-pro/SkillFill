@@ -1,0 +1,38 @@
+<header class="p-2 w-full fixed top-0 z-50 bg-linear-to-r from-primary to-black">
+  <div class="flex align-middle items-center px-2 mx-auto gap-6">
+    <a class="flex max-h-16 items-center text-black border-r-black border-r-2 pr-6 gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6">
+        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+      </svg>
+      <h3 class="flex text-2xl font-semibold uppercase text-black">SkillFill</h3>
+    </a>
+    <nav class="flex gap-3 my-2 uppercase text-lg text-black">
+      <a>Books</a>
+      <a>Courses</a>
+      <a>Monographs</a>
+      <a>Report</a>
+    </nav>
+    <div class="flex align-middle ml-auto gap-3">
+      @if (accountService.currentUser(); as user) {
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="flex items-center text-white text-bold gap-2 cursor-pointer">
+            <img src="/avatar.png" alt="user" class="w-8 l-8 rounded-box">
+            <span>{{user.userName}}</span>
+          </div>
+          <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+            <li><a>Edit Profile</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+      } @else {
+        <form #loginForm="ngForm" (ngSubmit)="login()" class="flex item-center gap-3">
+          <input
+            [(ngModel)]="credentials.email" name="email" type="text" class="input rounded-lg" placeholder="Email">
+          <input
+            [(ngModel)]="credentials.password" name="password" type="password" class="input rounded-lg" placeholder="Password">
+          <button type="submit" class="bth cursor-pointer dark:bg-blue-600 px-5 rounded-lg">Login</button>
+        </form>
+      }
+    </div>
+  </div>
+</header>

@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices;
-
 namespace API.DTOs;
 
 public class UserDto
