@@ -17,13 +17,13 @@
         <a routerLink="/messages" routerLinkActive="text-accent">Messages</a>
       }
       <a routerLink="/report" routerLinkActive="text-accent">Report</a>
+      <a routerLink="/errors" routerLinkActive="text-accent">Errors</a>
     </nav>
     <div class="flex align-middle ml-auto gap-3">
-      @if (accountService.currentUser(); as user) {
+      @if (accountService.currentUser()) {
         <div class="dropdown dropdown-end">
-          <div tabindex="0" role="button" class="flex items-center text-white text-bold gap-2 cursor-pointer">
-            <img src="/avatar.png" alt="user" class="w-8 l-8 rounded-box">
-            <span>{{user.userName}}</span>
+          <div tabindex="0" role="button" class="flex items-center text-white font-bold gap-2 cursor-pointer">
+            <img src="/avatar.png" alt="user" class="w-8 h-8 rounded-box">
           </div>
           <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
             <li><a>Edit Profile</a></li>

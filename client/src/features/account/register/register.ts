@@ -1,4 +1,4 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RegisterCreds} from '../../../types/user';
 import { AccountService } from '../../../core/services/account-service';

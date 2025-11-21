@@ -14,6 +14,9 @@
         },
         "@schematics/angular:guard": {
           "skipTests": true, "path": "src/core/gaurds"
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true, "path": "src/core/interceptor"
         }
       },
       "root": "",
